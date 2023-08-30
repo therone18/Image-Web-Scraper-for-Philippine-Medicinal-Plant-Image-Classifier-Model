@@ -1,11 +1,11 @@
-import bs4
+
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import os
 import time
 import io
-from PIL import Image
+from PIL import Images
 
 driver= webdriver.Chrome()
 search_url = "https://www.google.com/search?sca_esv=559310888&rlz=1C1ONGR_enPH1008PH1008&sxsrf=AB5stBhMA_Aut7fIUnqZ_YZYZ8DlmvJ05g:1692768474036&q=Alliaceae+Allium+odorum+L.&tbm=isch&source=lnms&sa=X&ved=2ahUKEwikttP8hfKAAxV8bmwGHU0iAZUQ0pQJegQIDhAB&biw=1920&bih=894&dpr=1"
