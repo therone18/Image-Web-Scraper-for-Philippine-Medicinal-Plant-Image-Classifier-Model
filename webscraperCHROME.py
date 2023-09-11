@@ -1,17 +1,19 @@
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import os
-import time
+import time 
 import io
 from PIL import Images
 
 driver= webdriver.Chrome()
-search_url = "https://www.google.com/search?sca_esv=559310888&rlz=1C1ONGR_enPH1008PH1008&sxsrf=AB5stBhMA_Aut7fIUnqZ_YZYZ8DlmvJ05g:1692768474036&q=Alliaceae+Allium+odorum+L.&tbm=isch&source=lnms&sa=X&ved=2ahUKEwikttP8hfKAAxV8bmwGHU0iAZUQ0pQJegQIDhAB&biw=1920&bih=894&dpr=1"
-download_path = "D:/Workstuff/Thesis/Alliaceae Allium odorum L/"
-driver.get(search_url)
 
+search_url = "https://www.google.com/search?q=Vitex+negundo+L.+&tbm=isch&ved=2ahUKEwiP8-Ps-YuBAxWH5TgGHbs_AVwQ2-cCegQIABAA&oq=Vitex+negundo+L.+&gs_lcp=CgNpbWcQAzIFCAAQgAQyBQgAEIAEMgQIABAeMgcIABAYEIAEUOYgWOYgYKwlaAFwAHgAgAGXAogBvwOSAQUwLjEuMZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=zC3zZI_dK4fL4-EPu_-E4AU&bih=894&biw=1920&rlz=1C1ONGR_enPH1008PH1008"
+download_path = "D:/Workstuff/Thesis/Plectranthus scutellarioides (L.) R.Br./"
+driver.get(search_url)
 
 def scrape_initilaization(max_images):
     thumbnails =[]
@@ -19,8 +21,6 @@ def scrape_initilaization(max_images):
 
     while foundimage_reached == False:
         if len(thumbnails) < max_images:
-            current_thumbnail_len = len(thumbnails)
-
             driver.execute_script("window.scroll(0, document.body.scrollHeight);")
             load_more_button = driver.find_elements(By.CLASS_NAME, "LZ4I")
 
@@ -32,9 +32,7 @@ def scrape_initilaization(max_images):
                 print(len(thumbnails))
                 driver.find_element("xpath", """//*[@id="islmp"]/div/div/div/div/div[1]/div[2]/div[2]/input""")
                 time.sleep(5)
-
-            
-                   
+        
         else:
             foundimage_reached = True
            
@@ -81,14 +79,13 @@ def start_scan(delay, max_images, load_time):
                         print(image_src)
                         image_saved.append(image_src)
                     else:
-                        
+
                         load_counter += 1
                         time.sleep(1)
                         if load_counter == load_time:
                             break
                         else: 
                          continue
-                #print(image_src)
 
                 i+=1
                 print(i)
@@ -96,9 +93,7 @@ def start_scan(delay, max_images, load_time):
                 continue
             
     return image_saved
-            #r48jcc pT0Scc iPVvYb
 
-                #//*[@id="Sva75c"]/div[2]/div[2]/div[2]/div[2]/c-wiz/div/div/div/div[3]/div[1]/a/img[1]
 
 def start_scrape():
     unsuccessful_download_counter = 0
@@ -106,6 +101,7 @@ def start_scrape():
     scan_delay = int(input("Please Input Image Scan Delay -> "))
     scan_loadtime = int(input("Please input Image Scan Load Wait Time -> "))
     image_download= ""
+
     Found_HD_Images = start_scan(scan_delay, scan_length, scan_loadtime)
     i = 0
 

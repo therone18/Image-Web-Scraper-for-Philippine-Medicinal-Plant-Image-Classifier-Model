@@ -4,8 +4,15 @@ This Web Scraper is for gathering images to be used on model training and testin
 
 # Needed Libraries and Dependencies
 - Pillow (pip install Pillow)
-- Selenium (pip install Selenium)
+- Selenium (pip install selenium)
 - Requests (pip install requests)
+
+# How to use
+- Run the program webscraperCHROME.py
+- Input the asked inputs
+- Scan Length is how many image containers the program will use to try and download HD Images from
+- Scan Delay is how duration before the scanner will move on to the next container after finishing the scan on the current container
+- Scan Load Time is how long the scanner will wait for the HD image will generate before moving on
 
 # What I learned
 - web scraping techniques using web automation 
